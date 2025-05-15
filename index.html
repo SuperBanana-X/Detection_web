@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Object Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+      "imports": {
+      }
+    }
+    </script>
+</head>
+<body>
+    <div id="startScreen">
+        <h1 id="startScreenTitle">Urban Object Detection System</h1>
+        <p id="startScreenSubtitle">Advanced Visual Analysis Techniques</p>
+        <button id="enterAppButton">Enter System</button>
+    </div>
+
+    <div class="container" style="display: none;">
+        <h1>Real-time Detection Dashboard</h1>
+        
+        <div class="controls">
+            <label for="videoUpload" class="upload-button">Upload Video</label>
+            <input type="file" id="videoUpload" accept="video/*">
+            <button id="startDetection">Start Detect</button>
+        </div>
+
+        <div class="video-container">
+            <video id="videoPlayer" controls muted playsinline style="display:none;"></video>
+            <canvas id="outputCanvas"></canvas>
+        </div>
+        
+        <div id="detectionInfo">
+            <h2>Detection Result:</h2>
+            <div id="statusMessage">Please upload a video and start detection.</div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-label">Vehicle:</span>
+                    <span class="stat-value" id="count-car">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Pedestrian:</span>
+                    <span class="stat-value" id="count-pedestrian">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Traffic light:</span>
+                    <span class="stat-value" id="count-bicycle">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>
